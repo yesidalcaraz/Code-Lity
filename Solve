@@ -1,0 +1,27 @@
+<?php
+
+function solve($s) {
+  $countUper=0;
+  $countLower=0;
+  for($i=0; $i< strlen($s);$i++){
+    $palab=$s[$i];
+    if($palab===strtoupper($palab)){
+      $countUper+=1;
+    }else{
+      $countLower+=1;
+    }
+  }
+  if($countUper>$countLower){
+    return strtoupper($s);
+  }else if ($countLower>$countUper){
+    return strtolower($s);
+  }else if($countUper===$countLower){
+    return strtolower($s);
+  }
+}
+
+echo solve("code <br> ");
+echo solve('CODe <br>');
+echo solve("coDE <br>");
+
+?>
